@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DamiTools - Electrical Gadgets</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <!-- Your Main JS -->
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="assets/images/logo.png" alt="DamiTools Logo" class="splash-logo">
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <h1 class="logo">DT</h1>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#" onclick="showCategories()">Category</a>
+      <a href="#">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Search Bar -->
+  <section class="search-bar">
+    <button class="cam-btn">📷</button>
+    <input type="text" id="searchInput" placeholder="Search for products...">
+  </section>
+
+  <!-- Category Section -->
+  <section id="categories" class="categories hidden">
+    <h2>Categories</h2>
+    <ul>
+      <li onclick="filterCategory('Phones')">Phones</li>
+      <li onclick="filterCategory('Laptops')">Laptops</li>
+      <li onclick="filterCategory('Accessories')">Accessories</li>
+      <li onclick="filterCategory('Appliances')">Appliances</li>
+      <li onclick="filterCategory('Tools')">Tools</li>
+      <li onclick="filterCategory('Others')">Others</li>
+    </ul>
+  </section>
+
+  <!-- Product Grid -->
+  <main>
+    <h2>Featured Products</h2>
+    <div id="product-grid" class="product-grid">
+      <!-- 200 Products will auto-load here from JS -->
+    </div>
+  </main>
+
+  <!-- Product Details Modal -->
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="product-detail"></div>
+    </div>
+  </div>
+
+  <!-- Side Menu -->
+  <aside id="side-menu" class="side-menu hidden">
+    <div class="profile">
+      <img src="assets/images/default-profile.png" alt="Profile" id="userPhoto">
+      <p id="userName">Guest</p>
+    </div>
+    <ul>
+      <li><a href="#" onclick="openAccount()">Account / Profile</a></li>
+      <li><a href="#">Help & Support</a></li>
+      <li><a href="tel:09036470778">Customer Service: 09036470778</a></li>
+      <li><a href="mailto:yourgmail@gmail.com">Email Us</a></li>
+      <li><a href="https://wa.me/234705470008">WhatsApp</a></li>
+      <li><a href="#">About Website</a></li>
+    </ul>
+  </aside>
+
+  <!-- DamiTools App Button -->
+  <section class="app-download">
+    <a href="YOUR_EXPO_APP_LINK_HERE" class="btn">📲 Download DamiTools App</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 DamiTools. All rights reserved.</p>
+    <p>Free delivery above ₦20,000 | Safe Payments | 24/7 Support</p>
+  </footer>
+</body>
+</html>
